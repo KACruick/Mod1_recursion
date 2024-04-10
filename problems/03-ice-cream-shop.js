@@ -9,17 +9,30 @@ Examples:
 ***********************************************************************/
 
 
+// function iceCreamShop(flavors, favorite) {
+//     if(flavors.length === 0){
+//       return false
+//     }
+//     if(flavors[flavors.length -1] === favorite){
+//       return true
+//     }
+//     if(flavors[flavors.length -1] !== favorite){
+//       flavors.pop()
+//       return iceCreamShop(flavors, favorite)
+//     }
+// }
+
 function iceCreamShop(flavors, favorite) {
-    if(flavors.length === 0){
-      return false
-    }
-    if(flavors[flavors.length -1] === favorite){
-      return true
-    }
-    if(flavors[flavors.length -1] !== favorite){
-      flavors.pop()
-      return iceCreamShop(flavors, favorite)
-    }
+  if(flavors.length === 0){
+    return false
+  }
+  let flavor = flavors[0]
+
+  if(flavor === favorite){
+    return true
+  }
+
+  return iceCreamShop(flavors.slice(1), favorite)
 }
 
 console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
