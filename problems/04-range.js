@@ -5,16 +5,23 @@ the start, return an empty array.
 
 Examples:
 
-range(1, 5); // [1, 2, 3, 4]
-range(3, 4); // [3]
-range(7, 6); // []
+
 ***********************************************************************/
 
 
-function range(start, end) {
-  // Your code here 
+function range(start, end, array = []) {
+
+  if(start >= end){
+    return array
+  }
+  array.push(start)
+
+  return range(start + 1, end, array)
 }
 
+console.log(range(1, 5)); // [1, 2, 3, 4]
+console.log(range(3, 4)); // [3]
+console.log(range(7, 6)); // []
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
